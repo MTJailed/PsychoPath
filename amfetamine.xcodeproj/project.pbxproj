@@ -16,8 +16,6 @@
 		1D23F56A1FC1D668006EC156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D23F5681FC1D668006EC156 /* LaunchScreen.storyboard */; };
 		1D23F5751FC1D668006EC156 /* amfetamineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D23F5741FC1D668006EC156 /* amfetamineTests.m */; };
 		1D23F5801FC1D668006EC156 /* amfetamineUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D23F57F1FC1D668006EC156 /* amfetamineUITests.m */; };
-		1D23F5901FC1D9E5006EC156 /* StreamingZip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D23F58F1FC1D9E5006EC156 /* StreamingZip.framework */; };
-		1D23F5921FC1DB56006EC156 /* StreamingUnzipper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D23F5911FC1DB56006EC156 /* StreamingUnzipper.m */; };
 		1D23F5941FC1E815006EC156 /* Payload.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1D23F5931FC1E815006EC156 /* Payload.zip */; };
 /* End PBXBuildFile section */
 
@@ -56,9 +54,7 @@
 		1D23F57B1FC1D668006EC156 /* amfetamineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amfetamineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D23F57F1FC1D668006EC156 /* amfetamineUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = amfetamineUITests.m; sourceTree = "<group>"; };
 		1D23F5811FC1D668006EC156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D23F58D1FC1D830006EC156 /* StreamingUnzipper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreamingUnzipper.h; sourceTree = "<group>"; };
 		1D23F58F1FC1D9E5006EC156 /* StreamingZip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StreamingZip.framework; sourceTree = "<group>"; };
-		1D23F5911FC1DB56006EC156 /* StreamingUnzipper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamingUnzipper.m; sourceTree = "<group>"; };
 		1D23F5931FC1E815006EC156 /* Payload.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Payload.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D23F5901FC1D9E5006EC156 /* StreamingZip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				1D23F5931FC1E815006EC156 /* Payload.zip */,
-				1D23F58D1FC1D830006EC156 /* StreamingUnzipper.h */,
-				1D23F5911FC1DB56006EC156 /* StreamingUnzipper.m */,
 				1D23F55A1FC1D667006EC156 /* AppDelegate.h */,
 				1D23F55B1FC1D667006EC156 /* AppDelegate.m */,
 				1D23F55D1FC1D667006EC156 /* ViewController.h */,
@@ -302,7 +295,6 @@
 			files = (
 				1D23F55F1FC1D667006EC156 /* ViewController.m in Sources */,
 				1D23F55C1FC1D667006EC156 /* AppDelegate.m in Sources */,
-				1D23F5921FC1DB56006EC156 /* StreamingUnzipper.m in Sources */,
 				1D23F5651FC1D668006EC156 /* amfetamine.xcdatamodeld in Sources */,
 				1D23F5591FC1D667006EC156 /* main.m in Sources */,
 			);
@@ -552,6 +544,7 @@
 				1D23F5861FC1D668006EC156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D23F5871FC1D668006EC156 /* Build configuration list for PBXNativeTarget "amfetamineTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +553,7 @@
 				1D23F5891FC1D668006EC156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D23F58A1FC1D668006EC156 /* Build configuration list for PBXNativeTarget "amfetamineUITests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +562,7 @@
 				1D23F58C1FC1D668006EC156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
