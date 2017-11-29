@@ -17,6 +17,9 @@
 		1D23F5751FC1D668006EC156 /* amfetamineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D23F5741FC1D668006EC156 /* amfetamineTests.m */; };
 		1D23F5801FC1D668006EC156 /* amfetamineUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D23F57F1FC1D668006EC156 /* amfetamineUITests.m */; };
 		1D23F5941FC1E815006EC156 /* Payload.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1D23F5931FC1E815006EC156 /* Payload.zip */; };
+		1D4D891B1FCF4F29005432F0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4D891A1FCF4F29005432F0 /* CoreMedia.framework */; };
+		1D4D891F1FCF53B0005432F0 /* PrivateAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D891E1FCF53B0005432F0 /* PrivateAPIManager.m */; };
+		1DC0103E1FCDF1570053903B /* libsandbox.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DC0103D1FCDF1570053903B /* libsandbox.1.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,10 @@
 		1D23F5811FC1D668006EC156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D23F58F1FC1D9E5006EC156 /* StreamingZip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StreamingZip.framework; sourceTree = "<group>"; };
 		1D23F5931FC1E815006EC156 /* Payload.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Payload.zip; sourceTree = "<group>"; };
+		1D4D891A1FCF4F29005432F0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1D4D891E1FCF53B0005432F0 /* PrivateAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateAPIManager.m; sourceTree = "<group>"; };
+		1D4D89201FCF53F8005432F0 /* PrivateAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateAPIManager.h; sourceTree = "<group>"; };
+		1DC0103D1FCDF1570053903B /* libsandbox.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.1.tbd; path = usr/lib/libsandbox.1.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4D891B1FCF4F29005432F0 /* CoreMedia.framework in Frameworks */,
+				1DC0103E1FCDF1570053903B /* libsandbox.1.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +127,8 @@
 				1D23F56B1FC1D668006EC156 /* Info.plist */,
 				1D23F5631FC1D668006EC156 /* amfetamine.xcdatamodeld */,
 				1D23F5571FC1D667006EC156 /* Supporting Files */,
+				1D4D89201FCF53F8005432F0 /* PrivateAPIManager.h */,
+				1D4D891E1FCF53B0005432F0 /* PrivateAPIManager.m */,
 			);
 			path = amfetamine;
 			sourceTree = "<group>";
@@ -151,6 +162,8 @@
 		1D23F58E1FC1D9E5006EC156 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D4D891A1FCF4F29005432F0 /* CoreMedia.framework */,
+				1DC0103D1FCDF1570053903B /* libsandbox.1.tbd */,
 				1D23F58F1FC1D9E5006EC156 /* StreamingZip.framework */,
 			);
 			name = Frameworks;
@@ -293,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4D891F1FCF53B0005432F0 /* PrivateAPIManager.m in Sources */,
 				1D23F55F1FC1D667006EC156 /* ViewController.m in Sources */,
 				1D23F55C1FC1D667006EC156 /* AppDelegate.m in Sources */,
 				1D23F5651FC1D668006EC156 /* amfetamine.xcdatamodeld in Sources */,
