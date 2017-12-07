@@ -28,7 +28,7 @@ __BEGIN_DECLS
 #define __XPC_INDIRECT__
 #endif // __XPC_INDIRECT__
 
-#include <xpc/base.h>
+#include "base.h"
 
 #define XPC_API_VERSION 20121012
 
@@ -320,14 +320,14 @@ XPC_EXPORT
 const char *const _xpc_event_key_name;
 
 #ifndef __XPC_BUILDING_XPC__
-#include <xpc/endpoint.h>
-#include <xpc/debug.h>
+#include "endpoint.h"
+#include "debug.h"
 #if __BLOCKS__
-#include <xpc/connection.h>
-#include <xpc/activity.h>
+#include "connection.h"
+#include "activity.h"
 #endif // __BLOCKS__
 #undef __XPC_INDIRECT__
-#include <launch.h>
+#include "launch.h"
 #endif // __XPC_BUILDING_XPC__ 
 
 #pragma mark XPC Object Protocol

@@ -6,8 +6,8 @@
 //  Copyright © 2017 Sem Voigtländer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "PrivateAPIManager.h"
+
 @interface PrivateAPI()
 @end
 @implementation PrivateAPI

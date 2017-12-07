@@ -24,7 +24,7 @@ __BEGIN_DECLS
 #endif // !defined(__has_extension)
 
 #if __has_include(<xpc/availability.h>)
-#include <xpc/availability.h>
+#include "availibility.h"
 #else // __has_include(<xpc/availability.h>)
 #include <Availability.h>
 #endif // __has_include(<xpc/availability.h>)
